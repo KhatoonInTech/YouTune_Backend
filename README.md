@@ -13,7 +13,7 @@
 <br>
 <br>
 	  
-![Stripe ](../images/YouTune.png)
+![Stripe ](Images/Youtune.png)
 
 </div>
 
