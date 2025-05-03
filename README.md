@@ -21,12 +21,23 @@
 
 
 
-# 🎬 AI Video Generation Pipeline
-
 An AI-driven multi-agent automation system that generates video content end-to-end — from idea generation to video creation. This modular pipeline is built using Python and integrates natural language processing, text-to-speech, and media synthesis technologies.
 
 ---
+## 📚 Table of Contents
 
+* [Overview](#-overview)
+* [Project Architecture](#-project-architecture)
+* [Requirements](#-requirements)
+* [Setup](#-setup)
+* [Workflow](#-workflow)
+* [Output Structure](#-output-structure)
+* [Extensibility](#-extensibility)
+* [Troubleshooting](#-troubleshooting)
+* [License](#-license)
+* [Conclusion](#-conclusion)
+
+---
 ## 🧠 Overview
 
 This project uses a sequence of intelligent agents to:
@@ -178,6 +189,13 @@ Each agent is modular and can be replaced or upgraded:
 
 MIT License. See [LICENSE](LICENSE) for details.
 
+
+---
+## ✅ Conclusion
+
+This project offers a robust, flexible, and extensible platform for automated video content creation using cutting-edge AI. It is ideal for content creators, marketers, educators, and developers seeking to streamline or experiment with automated media workflows.
+
+Contributions and enhancements are welcome — feel free to fork, improve, and share!
 
 ---
 
