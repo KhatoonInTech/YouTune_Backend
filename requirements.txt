@@ -1,0 +1,13 @@
+requests
+Google-api-python-client
+python-dotenv
+groq
+langchain
+langchain-core
+langchain-groq
+rich
+gTTS
+elevenlabs
+moviepy
+numpy
+nltk
