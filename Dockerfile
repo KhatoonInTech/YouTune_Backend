@@ -1,23 +1,31 @@
-# Use an official Python runtime as a parent image
-FROM python:3.12-slim-bookworm
+# Use the official lightweight Python image
+FROM python:3.11-slim
 
-# Ensure the /app directory exists
-RUN mkdir -p /app
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
-# Set the working directory in the container
+# Set working directory
 WORKDIR /app
 
-# Copy the requirements file into the container
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    libsm6 \
+    libxext6 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements file
 COPY requirements.txt .
 
-# Install any dependencies specified in requirements.txt
+# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the application code into the container
+# Copy project files
 COPY . .
 
-# Expose port 8000 to the outside world
+# Expose port (Railway automatically maps internal ports)
 EXPOSE 8080
 
-# Command to run the application
-CMD ["uvicorn", "main:app", "--host", "127.0.0.1", "--port", "8080"]
+# Run the application with uvicorn
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
