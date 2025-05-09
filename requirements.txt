@@ -1,3 +1,11 @@
+# --- Core Framework ---
+fastapi
+uvicorn[standard] # Includes pydantic, starlette, etc.
+
+# --- Configuration ---
+python-dotenv
+
+
 requests
 Google-api-python-client
 python-dotenv
@@ -11,3 +19,5 @@ elevenlabs
 moviepy
 numpy
 nltk
+
+python-multipart 
