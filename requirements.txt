@@ -8,7 +8,6 @@ python-dotenv
 
 requests
 Google-api-python-client
-python-dotenv
 groq
 langchain
 langchain-core
