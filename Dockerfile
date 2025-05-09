@@ -13,6 +13,9 @@ RUN apt-get update && apt-get install -y \
     ffmpeg \
     libsm6 \
     libxext6 \
+    tesseract-ocr \
+    build-essential \
+    git \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements file
@@ -28,4 +31,4 @@ COPY . .
 EXPOSE 8080
 
 # Run the application with uvicorn
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
