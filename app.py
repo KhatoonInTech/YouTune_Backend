@@ -6,6 +6,8 @@ from Agents import idea_agent
 from Agents import scriptagent
 from Agents import text_to_speech_agent as tts_agent
 from Agents import video_agent
+from Agents import seoAgent
+from Agents import uploadAgent
 # from Agents import text_speech
 def main():
     # Run the idea agent to generate a title
@@ -55,6 +57,27 @@ def main():
 
     print(f"\n{'-'*150}")
     
+
+
+    #Genenerating SEO optimized description and hashtags
+    description_response = seoAgent.gen_description_and_hashtags(title, subtitles, filename=f'{project_dir}/{filename}.json')
+    description = description_response.get('description')  #str
+    hashtags = description_response.get('hashtags')   #list of hashtags
+    print(f"Success: The SEO optimized description and hashtags are stored at : {project_dir}/{filename}.json")
+    print(f"\n{'-'*150}")
+
+    #Running Upload Agent
+    video_id = uploadAgent.upload_api_call(
+        video_file=rf"C:\Users\Super\OneDrive\Desktop\Youtube Automation\{final_video}",
+        title=title,
+        description=description,
+        tags=hashtags
+    )
+    if video_id is None:
+        print("Error: Video upload failed.")
+    else:
+        print(f"\n\nSuccess: Your video is live at https://www.youtube.com/watch?v={video_id}")
+        print(f"\n{'-'*150}")
 # Run the main function
 if __name__ == "__main__":
     main()    

@@ -8,6 +8,7 @@ python-dotenv
 
 requests
 Google-api-python-client
+python-dotenv
 groq
 langchain
 langchain-core
@@ -19,4 +20,8 @@ moviepy
 numpy
 nltk
 
-python-multipart 
+python-multipart
+google-auth 
+google-auth-oauthlib 
+google-auth-httplib2 
+google-api-python-client
